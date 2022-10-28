@@ -1,6 +1,7 @@
 $(document).ready(function () {
   var currentDayEl = $("#currentDay");
   var time = $(".hour");
+  var timeValue = $(".time-value")
   var timeBlock = $(".time-block");
   
   // get current day and display it
@@ -11,7 +12,6 @@ $(document).ready(function () {
   var currentHour = moment().format("H");
   // color each code block based on the current hour
   console.log(currentHour);
-  console.log(time.text);
 
   timeBlock.children('textarea').addClass('past');
   
@@ -19,7 +19,7 @@ $(document).ready(function () {
   
   
 
-  if (currentHour == time.text) {
+  if (currentHour === timeValue) {
    timeBlock.children('textarea').addClass('present');
   }
 
