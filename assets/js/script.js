@@ -8,19 +8,19 @@ $(document).ready(function () {
   currentDayEl.text(today);
 
   // get current hour 
-  var currentHour = moment().format("hA");
+  var currentHour = moment().format("H");
   // color each code block based on the current hour
   console.log(currentHour);
   console.log(time.text);
 
-  var pastClass = timeBlock.children('textarea').addClass('past');
+  timeBlock.children('textarea').addClass('past');
   
-  var pastClass = timeBlock.children('textarea').addClass('future');
+  timeBlock.children('textarea').addClass('future');
   
   
 
   if (currentHour == time.text) {
-    var pastClass = timeBlock.children('textarea').addClass('present');
+   timeBlock.children('textarea').addClass('present');
   }
 
   //if current time .present is applied
