@@ -12,7 +12,7 @@ $(document).ready(function () {
   // get current hour
   var currentHour = moment().hour();
 
-  $(".description").each(function (i) {
+  $(".description").each(function(i) {
     var text = localStorage.getItem(timeValue[i]);
     $(this).val(text);
     if (timeValue[i] == currentHour) {
