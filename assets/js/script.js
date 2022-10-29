@@ -1,33 +1,36 @@
 $(document).ready(function () {
   var currentDayEl = $("#currentDay");
   var time = $(".hour");
-  var timeValue = $(".time-value")
+  var timeValue = [9, 10, 11, 12, 13, 14, 15, 16, 17];
   var timeBlock = $(".time-block");
   
+
   // get current day and display it
   var today = moment().format("dddd, MMMM  Do");
   currentDayEl.text(today);
 
-  // get current hour 
-  var currentHour = moment().format("H");
-  // color each code block based on the current hour
-  console.log(currentHour);
+  // get current hour
+  var currentHour = moment().hour();
 
-  timeBlock.children('textarea').addClass('past');
-  
-  timeBlock.children('textarea').addClass('future');
-  
-  
+  $(".description").each(function (i) {
+    var text = localStorage.getItem(timeValue[i]);
+    $(this).val(text);
+    if (timeValue[i] == currentHour) {
+      $(this).addClass("present");
+    }
+    if (timeValue[i] < currentHour) {
+      $(this).addClass("past");
+    }
+    if (timeValue[i] > currentHour) {
+      $(this).addClass("future");
+    }
+  });
 
-  if (currentHour === timeValue) {
-   timeBlock.children('textarea').addClass('present');
-  }
+  $(".saveBtn").on("click",function(i){
+    var dataNumber = $(this).siblings(".hour").attr("data-number");
+    var textBox = $(this).siblings(".description");
+    localStorage.setItem(dataNumber,textBox.val());
+  })
 
-  //if current time .present is applied
-  //if time has passed .past is applied
-  //if time has not come yet .future is applied
-
-  // when user clicks save btn of code block, 
-  // the text in that code block is saved to the local storage
+  console.log(timeValue);
 });
-
