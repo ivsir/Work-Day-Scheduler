@@ -16,6 +16,8 @@ If the time value in the time block has passed, the block turns gray. If the tim
 
 ## How to Use this Project
 <a href="https://ivsir.github.io/Work-Day-Scheduler/">This is the link to my WebPage</a>
+<a href="https://ivsir.github.io/Work-Day-Scheduler/"><img src="assets/Saved Tasks.png"></a>
+<a href="https://ivsir.github.io/Work-Day-Scheduler/"><img src="assets/Local Storage.png"></a>
 
 ## Contributors
 Risvi Tareq
