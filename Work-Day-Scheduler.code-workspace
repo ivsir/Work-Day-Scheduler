@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs"
+		},
+		{
+			"path": "../Power-Quiz"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Work-Day-Scheduler"
+	}
+}

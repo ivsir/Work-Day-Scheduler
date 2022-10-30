@@ -13,7 +13,6 @@ $(document).ready(function () {
   var currentHour = moment().hour();
 
   $(".description").each(function(i) {
-    var text = localStorage.getItem(timeValue[i]);
     $(this).val(text);
     if (timeValue[i] == currentHour) {
       $(this).addClass("present");
@@ -24,6 +23,7 @@ $(document).ready(function () {
     if (timeValue[i] > currentHour) {
       $(this).addClass("future");
     }
+    var text = localStorage.getItem(timeValue[i]);
   });
 
   $(".saveBtn").on("click",function(i){
