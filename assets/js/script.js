@@ -1,8 +1,8 @@
 $(document).ready(function () {
   var currentDayEl = $("#currentDay");
-  var time = $(".hour");
+  
   var timeValue = [9, 10, 11, 12, 13, 14, 15, 16, 17];
-  var timeBlock = $(".time-block");
+
   
 
   // get current day and display it
@@ -13,6 +13,7 @@ $(document).ready(function () {
   var currentHour = moment().hour();
 
   $(".description").each(function(i) {
+    var text = localStorage.getItem(timeValue[i]);
     $(this).val(text);
     if (timeValue[i] == currentHour) {
       $(this).addClass("present");
@@ -23,7 +24,6 @@ $(document).ready(function () {
     if (timeValue[i] > currentHour) {
       $(this).addClass("future");
     }
-    var text = localStorage.getItem(timeValue[i]);
   });
 
   $(".saveBtn").on("click",function(i){
